@@ -92,17 +92,25 @@ function updateAndDisplayMessage() {
   displayMessage();
 }
 
-function updateCurrentMessage(output) {
+function updateAndEliminateCurrentMessage(output) {
   if(output === "mantra") {
     currentPoster = mantras[getRandomIndex(mantras)];
-    currentAuthor = affirmationsAuthors[getRandomIndex(mantras)];
+    currentAuthor = mantrasAuthors[getRandomIndex(mantras)];
+    deleteUsedMessage(getRandomIndex(mantras), mantras, mantrasAuthors);
   } else if(output === "affirmation") {
     currentPoster = affirmations[getRandomIndex(affirmations)];
-    currentAuthor = mantrasAuthors[getRandomIndex(affirmations)];
+    currentAuthor = affirmationsAuthors[getRandomIndex(affirmations)];
+    deleteUsedMessage(getRandomIndex(affirmations), affirmations, affirmationsAuthors);
   } else if(output === "tough love") {
     currentPoster = toughies[getRandomIndex(toughies)];
     currentAuthor = toughiesAuthors[getRandomIndex(toughies)];
+    deleteUsedMessage(getRandomIndex(toughies), toughies, toughiesAuthors);
   }
+}
+
+function deleteUsedMessage(index, arrayOfMessages, arrayOfAuthors) {
+  arrayOfMessages.splice(index, 1);
+  arrayOfAuthors.splice(index, 1);
 }
 
 function displayMessage() {
