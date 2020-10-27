@@ -59,6 +59,11 @@ html {
   padding: 5px;
 }
 
+.error {
+  color: red !important;
+  font-style: italic !important;
+}
+
 #receive-message {
   background: #134d71;
   border-radius:5px;
