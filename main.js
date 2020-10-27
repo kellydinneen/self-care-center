@@ -8,13 +8,13 @@ var page = document.querySelector('html');
 
 
 var affirmations = [
-  "The function of prayer is not to influence God, but rather to change the nature of the one who prays",
-  "[I] am condemned to be free",
+  "The function of prayer is not to influence God, but rather to change the nature of the one who prays.",
+  "[I] am condemned to be free.",
   "The greater the difficulty, the more glory in surmounting it.",
   "Even while they teach, men learn.",
   "We live in the best of all possible worlds.",
-  "What is rational is actual and what is actual is rational",
-  "I think therefore I am",
+  "What is rational is actual and what is actual is rational.",
+  "I think therefore I am.",
 ]
 
 var affirmationsAuthors = [
@@ -32,7 +32,7 @@ var mantras = [
   "In everything, there is a share of everything.",
   "I can control my passions and emotions if I can understand their nature.",
   "Life must be understood backward. But it must be lived forward.",
-  "My knowledge here cannot go beyond my experience",
+  "My knowledge here cannot go beyond my experience.",
   "Entities should not be multiplied unnecessarily.",
   "To be is to be perceived.",
   "Whereof one cannot speak, thereof one must be silent.",
@@ -55,8 +55,8 @@ var toughies = [
   "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
   "Only one man ever understood me, and he didn’t understand me.",
   "Things alter for the worse spontaneously, if they be not altered for the better designedly.",
-  "I should never die for my beliefs because I might be wrong",
-  "I don’t know why we are here, but I’m pretty sure it is not in order to enjoy ourselves"
+  "I should never die for my beliefs because I might be wrong.",
+  "I don’t know why we are here, but I’m pretty sure it is not in order to enjoy ourselves."
 ]
 
 var toughiesAuthors = [
@@ -94,17 +94,20 @@ function updateAndDisplayMessage() {
 
 function updateCurrentMessage(output) {
   if(output === "mantra") {
-    currentMessage = mantras[getRandomIndex(mantras)];
-    currentAuthor = mantrasAuthors[getRandomIndex(mantras)];
-    deleteUsedMessage(getRandomIndex(mantras), mantras, mantrasAuthors);
+    var index = getRandomIndex(mantras);
+    currentMessage = mantras[index];
+    currentAuthor = mantrasAuthors[index];
+    deleteUsedMessage(index, mantras, mantrasAuthors);
   } else if(output === "affirmation") {
-    currentMessage = affirmations[getRandomIndex(affirmations)];
-    currentAuthor = affirmationsAuthors[getRandomIndex(affirmations)];
-    deleteUsedMessage(getRandomIndex(affirmations), affirmations, affirmationsAuthors);
+    var index = getRandomIndex(affirmations);
+    currentMessage = affirmations[index];
+    currentAuthor = affirmationsAuthors[index];
+    deleteUsedMessage(index, affirmations, affirmationsAuthors);
   } else if(output === "tough love") {
-    currentMessage = toughies[getRandomIndex(toughies)];
-    currentAuthor = toughiesAuthors[getRandomIndex(toughies)];
-    deleteUsedMessage(getRandomIndex(toughies), toughies, toughiesAuthors);
+    var index = getRandomIndex(toughies);
+    currentMessage = toughies[index];
+    currentAuthor = toughiesAuthors[index];
+    deleteUsedMessage(index, toughies, toughiesAuthors);
   }
 }
 
