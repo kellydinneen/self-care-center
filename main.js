@@ -88,21 +88,21 @@ function updateAndDisplayMessage() {
   for (const entry of selectedMessageType) {
     output = entry[1];
   };
-  updateCurrentMessage(output)
+  updateCurrentMessage(output);
   displayMessage();
 }
 
-function updateAndEliminateCurrentMessage(output) {
+function updateCurrentMessage(output) {
   if(output === "mantra") {
-    currentPoster = mantras[getRandomIndex(mantras)];
+    currentMessage = mantras[getRandomIndex(mantras)];
     currentAuthor = mantrasAuthors[getRandomIndex(mantras)];
     deleteUsedMessage(getRandomIndex(mantras), mantras, mantrasAuthors);
   } else if(output === "affirmation") {
-    currentPoster = affirmations[getRandomIndex(affirmations)];
+    currentMessage = affirmations[getRandomIndex(affirmations)];
     currentAuthor = affirmationsAuthors[getRandomIndex(affirmations)];
     deleteUsedMessage(getRandomIndex(affirmations), affirmations, affirmationsAuthors);
   } else if(output === "tough love") {
-    currentPoster = toughies[getRandomIndex(toughies)];
+    currentMessage = toughies[getRandomIndex(toughies)];
     currentAuthor = toughiesAuthors[getRandomIndex(toughies)];
     deleteUsedMessage(getRandomIndex(toughies), toughies, toughiesAuthors);
   }
@@ -114,12 +114,18 @@ function deleteUsedMessage(index, arrayOfMessages, arrayOfAuthors) {
 }
 
 function displayMessage() {
-  messageDisplay.innerHTML = `<p>${currentPoster}</p>`;
+  if(currentMessage === undefined) {
+    messageDisplay.innerHTML = `<p class="error">Take a breath. You are out of messages. If you are not yet refreshed, try another category or refresh this page.</p>`;
+  } else {
+    messageDisplay.innerHTML = `<p>${currentMessage}</p>`;
+  }
 }
 
 function displayAuthor() {
- messageDisplay.innerHTML =
- `<p>${currentPoster}</p> <h3 id="author"> - ${currentAuthor}<h3>`;
+ if(currentMessage != undefined) {
+   messageDisplay.innerHTML =
+ `<p>${currentMessage}</p> <h3 id="author"> - ${currentAuthor}<h3>`;
+  }
 }
 
 function toggleDarkMode() {
