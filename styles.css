@@ -37,6 +37,10 @@ html {
   font-style: italic;
 }
 
+.box:nth-child(1) {
+  margin-bottom: 10%;
+}
+
 .box:nth-child(3) {
   height: 80px;
   width: 520px;
@@ -52,13 +56,53 @@ html {
   color:#000000;
   margin: 80px;
   font-size: 130%;
+  padding: 30px;
 }
 
 #receive-message {
   background: #134d71;
   border-radius:5px;
   color: #ffffff;
-  font-size: 100%;
-  padding-left: 20px;
-  padding-right: 20px;
+  font-weight: lighter;
+  font-size: 95%;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#darkmode-button {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRvMf5eh3UhXzV7umOMPK_jVoOAhtolbGO3-Q&usqp=CAU');
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  color: #f7e4bf;
+  font-weight: bolder;
+  font-style: oblique;
+  font-size: 80%;
+  white-space: normal;
+}
+
+.html-dark {
+  background: linear-gradient(#000000, #134d71);
+  color: #f7e4bf;
+}
+
+.box-dark {
+  background: #134d71 !important;
+  color:#f7e4bf !important;
+}
+
+.receive-message-dark {
+  background: #134d71 !important;
+  color: #f7e4bf !important;
+}
+
+
+.lightmode-button {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQqT4fukdN9LPDB20yhNSbV48EAwfTzIT00WA&usqp=CAU') !important;
+  color: #134d71 !important;
 }
