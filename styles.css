@@ -56,12 +56,14 @@ html {
   color:#000000;
   margin: 80px;
   font-size: 125%;
+  text-align: center;
   padding: 5px;
 }
 
 .error {
-  color: red !important;
+  color: #C7849E !important;
   font-style: italic !important;
+  text-align: center;
 }
 
 #receive-message {
@@ -72,6 +74,7 @@ html {
   font-size: 95%;
   padding-left: 22px;
   padding-right: 22px;
+  margin-bottom: 5px
 }
 
 .buttons {
